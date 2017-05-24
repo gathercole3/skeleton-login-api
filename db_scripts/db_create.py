@@ -1,8 +1,8 @@
 #!flask/bin/python
 from migrate.versioning import api
-from skeleton-login-api.config import SQLALCHEMY_DATABASE_URI
-from skeleton-login-api.config import SQLALCHEMY_MIGRATE_REPO
-from skeleton-login-api import db
+from skeleton_login_api.config import SQLALCHEMY_DATABASE_URI
+from skeleton_login_api.config import SQLALCHEMY_MIGRATE_REPO
+from skeleton_login_api import db
 import os.path
 db.create_all()
 if not os.path.exists(SQLALCHEMY_MIGRATE_REPO):

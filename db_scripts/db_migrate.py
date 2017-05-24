@@ -1,9 +1,9 @@
 #!flask/bin/python
 import imp
 from migrate.versioning import api
-from skeleton-login-api import db
-from skeleton-login-api.config import SQLALCHEMY_DATABASE_URI
-from skeleton-login-api.config import SQLALCHEMY_MIGRATE_REPO
+from skeleton_login_api import db
+from skeleton_login_api.config import SQLALCHEMY_DATABASE_URI
+from skeleton_login_api.config import SQLALCHEMY_MIGRATE_REPO
 v = api.db_version(SQLALCHEMY_DATABASE_URI, SQLALCHEMY_MIGRATE_REPO)
 migration = SQLALCHEMY_MIGRATE_REPO + ('/versions/%03d_migration.py' % (v+1))
 tmp_module = imp.new_module('old_model')

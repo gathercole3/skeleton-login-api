@@ -7,7 +7,7 @@ app.config.from_pyfile("config.py")
 
 db = SQLAlchemy(app)
 
-from skeleton-login-api import models
-from skeleton-login-api.blueprints import register_blueprints
+from skeleton_login_api import models
+from skeleton_login_api.blueprints import register_blueprints
 
 register_blueprints(app)

@@ -1,4 +1,4 @@
-from skeleton-login-api import db
+from skeleton_login_api import db
 from sqlalchemy import ForeignKey
 from sqlalchemy.orm.session import Session
 

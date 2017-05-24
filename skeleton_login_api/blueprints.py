@@ -1,5 +1,5 @@
-from skeleton-login-api import app
-from skeleton-login-api.views import general
+from skeleton_login_api import app
+from skeleton_login_api.views import general
 
 def register_blueprints(app):
     """

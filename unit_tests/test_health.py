@@ -1,4 +1,4 @@
-from skeleton-login-api import app
+from skeleton_login_api import app
 import unittest
 
 
