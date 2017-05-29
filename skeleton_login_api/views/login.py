@@ -1,10 +1,9 @@
 from flask import request, Blueprint, jsonify, current_app
 
-general = Blueprint('general', __name__)
+login = Blueprint('login', __name__)
 
-
-@general.route("/health")
-def check_status():
+@login.route("/verify_google_token", methods=['POST'])
+def verify_google_token():
     return jsonify({
         "app": current_app.config["APP_NAME"],
         "status": "OK",
