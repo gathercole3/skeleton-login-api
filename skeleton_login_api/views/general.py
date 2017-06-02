@@ -1,4 +1,4 @@
-from flask import request, Blueprint, Response, jsonify, current_app
+from flask import request, Blueprint, jsonify, current_app
 
 general = Blueprint('general', __name__)
 
