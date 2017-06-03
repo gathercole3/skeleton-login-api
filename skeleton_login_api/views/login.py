@@ -58,6 +58,29 @@ def verify_login():
         if len(users_check) == 1:
             return jsonify(users_check[0].to_dict())
         else:
-            raise ApplicationError('no user has been found with this email and password combination', 'u001', )
+            raise ApplicationError('no user has been found with this email and password combination', 'u001' )
+    else:
+      raise ApplicationError('email or password missing', 'unspecified')
+
+@login.route("/register_user", methods=['POST'])
+def register_user():
+    json_data = request.json
+
+    if 'email' in json_data.keys() and 'password' in json_data.keys():
+        user = {}
+        user["email"] = json_data["email"]
+
+        #check if user exists
+        users_check = Sql.get_user(user)
+        if len(users_check) == 0:
+            user["password"] = json_data["password"]
+            new_user = Sql.new_user(user)
+            #check that the new user has been created successfully
+            if len(new_user) == 1:
+                return jsonify(new_user[0].to_dict())
+            else:
+                raise ApplicationError('something has gone wrong creating a new user', 'unspecified')
+        else:
+            raise ApplicationError('a user with this email alredy exists', 'u002' )
     else:
       raise ApplicationError('email or password missing', 'unspecified')
