@@ -1,7 +1,7 @@
 Flask==0.11.1
 Flask-Script==2.0.5
 requests==2.10.0
-flask-sqlalchemy==2.2
+flask-sqlalchemy==2.4.2
 sqlalchemy-migrate==0.11.0
 flask-whooshalchemy==0.56
 psycopg2
